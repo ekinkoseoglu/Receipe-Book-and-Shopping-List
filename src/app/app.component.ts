@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'receipe-book-and-shopping-list';
+  featureSelected:string;
+
+  onNavigate(event){
+    console.log(event);
+    this.featureSelected=event;
+  }
 }
+
