@@ -1,12 +1,20 @@
 <div class="row">
   <div class="col-xs-10">
-    <app-shopping-edit></app-shopping-edit>
+    <app-shopping-edit
+      (getIngredient)="selectIngredient($event)"
+      (clear)="clearIngredient()"
+    ></app-shopping-edit>
     <hr />
-    <ul class="list-group">
+
+    <ng-template #infoText>
+      <p>There is no ingredient</p>
+    </ng-template>
+    <ul *ngIf="ingredients.length > 0; else infoText" class="list-group">
       <a
+        *ngFor="let ingredient of ingredients"
+        (click)="onDeleteItem(ingredient.name)"
         class="list-group-item"
         style="cursor: pointer"
-        *ngFor="let ingredient of ingredients"
       >
         {{ ingredient.name }} ({{ ingredient.amount }}pc)
       </a>

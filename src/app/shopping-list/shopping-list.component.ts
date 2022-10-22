@@ -8,13 +8,24 @@ import { Ingredient } from '../shared/ingredient.model';
 })
 export class ShoppingListComponent implements OnInit {
 ingredients:Ingredient[] = [
-  new Ingredient('Apples',5),
-  new Ingredient('Tomatoes',10)
-  
+    {name:'Apples',amount:5},{name:'Tomatoes',amount:10}
 ];
   constructor() { }
 
   ngOnInit(): void {
   }
+  selectIngredient(ingredient:Ingredient){
 
+    this.ingredients.push(ingredient);
+    console.log("Shopping List",this.ingredients);
+  }
+  clearIngredient(){
+    this.ingredients = [];
+    console.log("Shopping List",this.ingredients);
+    
+  }
+  onDeleteItem(name:string){
+    this.ingredients.splice(this.ingredients.findIndex(ingredient=>ingredient.name===name),1);
+    
+  }
 }

@@ -9,7 +9,8 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-import { AppHighlightDirective } from './shared/directives/appHighlight.directive';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -22,11 +23,12 @@ import { AppHighlightDirective } from './shared/directives/appHighlight.directiv
     RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    AppHighlightDirective
+ 
    
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
