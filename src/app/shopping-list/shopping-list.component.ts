@@ -7,6 +7,7 @@ import { Ingredient } from '../shared/ingredient.model';
   styleUrls: ['./shopping-list.component.css']
 })
 export class ShoppingListComponent implements OnInit {
+    color:string = "red";
 ingredients:Ingredient[] = [
     {name:'Apples',amount:5},{name:'Tomatoes',amount:10}
 ];

@@ -10,6 +10,9 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { FormsModule } from '@angular/forms';
+import { AppHighlightDirective } from './shared/directives/appHighlight.directive';
+import { UnlessDirective } from './shared/directives/unlessDirective.directive';
+import { DropdownDirective } from './shared/directives/dropdown.directive';
 
 
 
@@ -23,6 +26,9 @@ import { FormsModule } from '@angular/forms';
     RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
+    AppHighlightDirective,
+    UnlessDirective,
+    DropdownDirective
  
    
   ],

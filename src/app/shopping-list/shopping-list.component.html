@@ -7,7 +7,7 @@
     <hr />
 
     <ng-template #infoText>
-      <p>There is no ingredient</p>
+      <p appHighlight="blue">There is no ingredient</p>
     </ng-template>
     <ul *ngIf="ingredients.length > 0; else infoText" class="list-group">
       <a
