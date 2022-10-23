@@ -14,6 +14,7 @@ openToggle:boolean = false;
   ngOnInit(): void {
   }
 
+  
   onToggle() {
     this.openToggle = !this.openToggle;
   }
