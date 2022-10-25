@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { RecipeService } from 'src/app/shared/services/recipe.service';
 import { Recipe } from '../recipe.model';
 
 @Component({
@@ -7,15 +8,19 @@ import { Recipe } from '../recipe.model';
   styleUrls: ['./recipe-detail.component.css']
 })
 export class RecipeDetailComponent implements OnInit {
-@Input() recipe:Recipe;
-openToggle:boolean = false;
-  constructor() { }
+  @Input() recipe: Recipe;
+  openToggle: boolean = false;
+  constructor(private recipeService: RecipeService) { }
 
   ngOnInit(): void {
   }
 
-  
+
   onToggle() {
     this.openToggle = !this.openToggle;
+  }
+
+  onAddToShoppingList() {
+    this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
   }
 }
